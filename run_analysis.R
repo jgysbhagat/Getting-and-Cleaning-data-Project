@@ -28,9 +28,10 @@ subject_train=read.table("UCI HAR Dataset/train/subject_train.txt",header=F)
 subject_test=read.table("UCI HAR Dataset/test/subject_test.txt",header=F)
 subjects=rbind(subject_train,subject_test)
 #Full Data set
-mean_std_labels$subjects=subjects$V1
+mean_std_labels$subjects=as.factor(subjects$V1)
+mean_std_labels$ActivityLabels=as.factor(mean_std_labels$ActivityLabels)
 #Q-5
 average_variables_data=mean_std_labels%>%
     group_by(subjects,ActivityLabels)%>%
     summarise_each(funs(mean))
-write.table(average_variables_data,"Average Variables data",row.names = F)
+write.table(average_variables_data,"tidy data.txt",row.names = F)
