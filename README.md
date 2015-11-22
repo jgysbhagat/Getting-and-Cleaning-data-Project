@@ -18,6 +18,6 @@ frequency.
 ## From the data set in step 4, creates a second, independent tidy data set with the average 
 of each variable for each activity and each subject.
 Groups the data by 30 subjects and 6 activities and calculates average for each of 
-66 variables
+66 variables and finally convert to data frame
 ### Note
 Codebook contains names of all the variables in the tidy dataset
